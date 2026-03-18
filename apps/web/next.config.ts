@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   transpilePackages: ['@quibes/shared'],
   turbopack: {
     // Explicitly set the monorepo root so Turbopack doesn't confuse multiple lockfiles
-    root: path.resolve(__dirname, '../..'),
+    root: path.resolve(__dirname, '../../..'),
   },
   images: {
     remotePatterns: [
