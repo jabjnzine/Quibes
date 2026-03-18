@@ -19,6 +19,10 @@ build/
 npm-debug.log*
 pnpm-debug.log*
 
+# AI Agent skills (local dev tools — not needed in repo or Docker)
+.agents/
+skills-lock.json
+
 # Editor
 .DS_Store
 .vscode/*
