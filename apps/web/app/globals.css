@@ -1,0 +1,267 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* ============================================
+   QUIBES BRAND COLORS
+   Source: Quibes_Style_Guide_1_Mar.pdf
+   ============================================ */
+
+  /* Primary Colors */
+  --color-copper: #AD6434;
+  --color-copper-80: #BD835D;
+  --color-copper-60: #CDA080;
+  --color-copper-30: #E6CEB9;
+
+  --color-caramel: #C2A061;
+  --color-caramel-60: #D4BA91;
+  --color-caramel-30: #EDE3CE;
+
+  /* Secondary Colors */
+  --color-mocha: #8C6450;
+  --color-mocha-60: #B4A08C;
+  --color-mocha-30: #DDD3C9;
+
+  --color-olive: #8C8C78;
+  --color-olive-80: #A3A38F;
+  --color-olive-60: #BABAA9;
+
+  --color-espresso: #643C28;
+  --color-espresso-60: #9A7464;
+  --color-espresso-30: #CDBBB5;
+
+  /* Neutral */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-gray-50: #F9F7F5;
+  --color-gray-100: #F0EDE8;
+  --color-gray-200: #E0D9D0;
+  --color-gray-400: #A89E94;
+  --color-gray-600: #6B6259;
+  --color-gray-800: #2C2520;
+
+  /* Semantic — UI States */
+  --color-success: #4CAF7D;
+  --color-warning: #E8A838;
+  --color-danger: #D94F4F;
+  --color-info: #5B9BD5;
+
+  /* ============================================
+   TYPOGRAPHY
+   Primary: AWConqueror Std Didot (EN)
+   Secondary: Than (TH + EN)
+   ============================================ */
+  --font-display: "AWConqueror Std Didot", "Cormorant Garamond", "Didot", serif;
+  --font-sans: "Than", "Noto Sans Thai", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.6;
+
+  /* ============================================
+   SPACING & RADIUS
+   ============================================ */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  --spacing-page-x: 24px;
+  --spacing-card: 20px;
+  --spacing-section: 32px;
+}
+
+:root {
+  /* QUIBES Brand mapped to shadcn semantic tokens */
+  --background: #F9F7F5;        /* gray-50 — page background */
+  --foreground: #2C2520;        /* gray-800 — primary text */
+  --card: #FFFFFF;
+  --card-foreground: #2C2520;
+  --popover: #FFFFFF;
+  --popover-foreground: #2C2520;
+  --primary: #AD6434;           /* copper — CTA, active nav */
+  --primary-foreground: #FFFFFF;
+  --secondary: #F0EDE8;         /* gray-100 — card surface */
+  --secondary-foreground: #2C2520;
+  --muted: #F0EDE8;             /* gray-100 */
+  --muted-foreground: #A89E94;  /* gray-400 — placeholder */
+  --accent: #E6CEB9;            /* copper-30 — hover/light bg */
+  --accent-foreground: #643C28; /* espresso */
+  --destructive: #D94F4F;       /* danger red */
+  --border: #E0D9D0;            /* gray-200 */
+  --input: #E0D9D0;             /* gray-200 */
+  --ring: #AD6434;              /* copper — focus ring */
+  --chart-1: #AD6434;
+  --chart-2: #C2A061;
+  --chart-3: #8C6450;
+  --chart-4: #8C8C78;
+  --chart-5: #643C28;
+  --radius: 0.5rem;             /* 8px base = radius-md */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #2C2520;
+  --sidebar-primary: #AD6434;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E6CEB9;
+  --sidebar-accent-foreground: #643C28;
+  --sidebar-border: #E0D9D0;
+  --sidebar-ring: #AD6434;
+}
+
+.dark {
+  --background: #2C2520;
+  --foreground: #F9F7F5;
+  --card: #3a2e28;
+  --card-foreground: #F9F7F5;
+  --popover: #3a2e28;
+  --popover-foreground: #F9F7F5;
+  --primary: #BD835D;           /* copper-80 — slightly lighter for dark bg */
+  --primary-foreground: #FFFFFF;
+  --secondary: #4a3c34;
+  --secondary-foreground: #F9F7F5;
+  --muted: #4a3c34;
+  --muted-foreground: #A89E94;
+  --accent: #5a4236;
+  --accent-foreground: #E6CEB9;
+  --destructive: #D94F4F;
+  --border: rgba(255,255,255,0.1);
+  --input: rgba(255,255,255,0.12);
+  --ring: #BD835D;
+  --sidebar: #241e1a;
+  --sidebar-foreground: #F9F7F5;
+  --sidebar-primary: #BD835D;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #3a2e28;
+  --sidebar-accent-foreground: #E6CEB9;
+  --sidebar-border: rgba(255,255,255,0.08);
+  --sidebar-ring: #BD835D;
+}
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  /* Preserve QUIBES radius tokens — defined in @theme above */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ─── FullCalendar QUIBES theme overrides ───────────────────────────────────── */
+.fc-quibes .fc-toolbar { display: none; }
+
+.fc-quibes .fc-timegrid-slot { height: 2.5rem; }
+
+.fc-quibes .fc-event {
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+.fc-quibes .fc-event:hover { filter: brightness(0.9); }
+
+.fc-quibes .fc-col-header-cell-cushion,
+.fc-quibes .fc-timegrid-axis-cushion,
+.fc-quibes .fc-timegrid-slot-label-cushion {
+  font-size: 0.75rem;
+  color: #6B6259;
+  font-weight: 500;
+}
+
+.fc-quibes .fc-daygrid-day-number {
+  font-size: 0.8rem;
+  color: #6B6259;
+}
+
+.fc-quibes .fc-col-header-cell.fc-day-today .fc-col-header-cell-cushion,
+.fc-quibes .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
+  color: #AD6434;
+  font-weight: 700;
+}
+
+.fc-quibes .fc-timegrid-now-indicator-line {
+  border-color: #AD6434;
+}
+.fc-quibes .fc-timegrid-now-indicator-arrow {
+  border-color: #AD6434;
+}
+
+.fc-quibes td,
+.fc-quibes th {
+  border-color: #F0EDE8;
+}
+
+.fc-quibes .fc-scrollgrid {
+  border: none;
+}
+
+.fc-quibes .fc-day-today {
+  background-color: #FDF9F6 !important;
+}
+
+.fc-quibes .fc-highlight {
+  background: rgba(173, 100, 52, 0.08);
+  border-radius: 4px;
+}
