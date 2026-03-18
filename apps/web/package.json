@@ -17,7 +17,7 @@
     "@fullcalendar/react": "^6.1.20",
     "@fullcalendar/timegrid": "^6.1.20",
     "@hookform/resolvers": "^3.9.0",
-    "@quibes/shared": "workspace:*",
+    "@quibes/shared": "file:../../packages/shared",
     "@supabase/supabase-js": "^2.44.4",
     "@tanstack/react-query": "^5.51.1",
     "@tanstack/react-query-devtools": "^5.51.1",
